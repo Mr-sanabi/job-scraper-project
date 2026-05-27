@@ -1,0 +1,11 @@
+{
+    "email": {
+        "from": "your_email@gmail.com",
+        "to": "recipient_email@gmail.com",
+        "password": "your_gmail_app_password",
+        "limit": 5
+    },
+    "scraping": {
+        "delay": 1
+    }
+}
