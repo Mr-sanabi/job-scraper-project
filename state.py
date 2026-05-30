@@ -8,24 +8,31 @@ def load_seen_links(filename: str) -> list[str]:
     except FileNotFoundError:
         logging.warning(f"File not found: {filename}")
         return []
-        
+    except json.JSONDecodeError:
+        logging.warning(f"File is empty or invalid JSON: {filename}")
+        return []
 
-def save_seen_links(seen_links, filename: str):
+def save_sent_links(jobs_to_send: list[dict], filename: str) -> bool:
     try:
+        old_links = load_seen_links(filename)
+
+        new_links = []
+
+        for job in jobs_to_send:
+            link = job.get("link")
+
+            if link and link not in old_links and link not in new_links:
+                new_links.append(link)
+
+        
+        update_links = old_links + new_links
+
         with open(filename, "w", encoding="utf-8") as file:
-            json.dump(seen_links, file, indent=4, ensure_ascii=False)
+            json.dump(update_links, file, indent=4, ensure_ascii=False)
+
+        logging.info(f"Saved {len(new_links)} new sent links")
+        return True
+    
     except OSError as e:
         logging.error(f"Failed to save file: {e}")
-        return
-
-def filter_new_jobs(jobs, seen_links):
-    new_jobs = []
-
-    for job in jobs:
-        link = job.get("link", "")
-
-        if link not in seen_links:
-            new_jobs.append(job)
-            seen_links.append(link)
-        
-    return new_jobs
+        return False
