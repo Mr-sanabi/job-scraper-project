@@ -28,13 +28,17 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-config = load_config("config.json")
 URL = "https://www.python.org/jobs/"
 KEYWORDS = ["python", "remote", "developer", "backend"]
-EMAIL_LIMIT = config["email"]["limit"]
 NOTIFIED_LINKS_FILE = "notified_links.json"
  
 def main() -> None:
+    config = load_config("config.json")
+    if not config:
+        logging.error("Unable to load config")
+        return
+    
+    EMAIL_LIMIT = config["email"]["limit"]
     html = fetch_page(URL, config)
     
     if html is None:
@@ -57,10 +61,13 @@ def main() -> None:
     jobs_to_send = new_for_email[:EMAIL_LIMIT]
 
     if jobs_to_send:
-        send_email(jobs_to_send, config)
-        save_sent_links(jobs_to_send, NOTIFIED_LINKS_FILE)
+        email_sent = send_email(jobs_to_send, config)
+        if email_sent == True:
+            save_sent_links(jobs_to_send, NOTIFIED_LINKS_FILE)
+        else:
+            logging.error("error")
     else:
-        logging.error("No new jobs to send.")
+        logging.info("No new jobs to send.")
 
     save = save_json(all_jobs, "all_jobs.json")
     save_csv(all_jobs, "all_jobs.csv")

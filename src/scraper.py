@@ -2,18 +2,15 @@ import requests
 import logging
 import time
 
-def fetch_page(url: str, config: list[dict]) -> str | None:
+def fetch_page(url: str, config: dict) -> str | None:
     delay = config["scraping"]["delay"]
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
         time.sleep(delay)
     except requests.exceptions.RequestException as e:
-        logging.error(f"Reques failed: {e}")
+        logging.error(f"Request failed: {e}")
         return None
 
-    if response.status_code != 200:
-        logging.error(f"Bad status code: {response.status_code}")
-        return None
-    
     logging.info(f"Page fetch successfully: {url}")
     return response.text
