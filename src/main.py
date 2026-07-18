@@ -1,9 +1,9 @@
-from scraper import fetch_page
-from parser import parse_job
-from filtering import filter_jobs
-from saver import save_json, save_csv
-from state import load_seen_links, save_sent_links
-from notifier import send_email
+from src.scraper import fetch_page
+from src.parser import parse_job
+from src.filtering import filter_jobs
+from src.saver import save_json, save_csv
+from src.state import load_seen_links, save_sent_links
+from src.notifier import send_email
 import json
 import logging
 
