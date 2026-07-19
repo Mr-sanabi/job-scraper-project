@@ -2,9 +2,10 @@ import smtplib
 from email.mime.text import MIMEText
 import logging
 
-def send_email(jobs: list[dict], config: dict) -> None:
+def send_email(jobs: list[dict], config: dict) -> bool:
     if not jobs:
-        return
+        logging.error("job list is empty")
+        return False
     
     try:
         email_from = config["email"]["from"]
@@ -25,13 +26,13 @@ def send_email(jobs: list[dict], config: dict) -> None:
         msg["Subject"] = "Вакансии за сегодня:"
 
         logging.info("Connecting to SMTP...")
-        server = smtplib.SMTP("smtp.gmail.com", 587)
-
-        server.starttls()
-        logging.info("Message sending...")
-        server.login(email_from, password)
-        server.sendmail(email_from, email_to, msg.as_string())
-        server.quit()
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()
+            logging.info("Message sending...")
+            server.login(email_from, password)
+            server.sendmail(email_from, email_to, msg.as_string())
         logging.info("Message sent")
+        return True
     except Exception as e:
         logging.error(f"Sending error: {e}")
+        return False

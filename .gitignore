@@ -1,5 +1,29 @@
-config.json
-venv/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local configuration and secrets
+config.json
+.env
+.env.*
+
+# Runtime files
 *.log
+notified_links.json
+all_jobs.json
+all_jobs.csv
+
+# Temporary files
+*.tmp
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

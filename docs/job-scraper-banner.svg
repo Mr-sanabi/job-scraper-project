@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1984" height="793" viewBox="0 0 1984 793" role="img" aria-labelledby="title desc">
+<title id="title">Job Scraper with Email Alerts</title>
+<desc id="desc">A dark technical banner showing job listings flowing through fetch, filter, and email alert stages.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07121d"/><stop offset="1" stop-color="#091827"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#39a8ff"/><stop offset=".48" stop-color="#35d36d"/><stop offset="1" stop-color="#ffad45"/></linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102130"/><stop offset="1" stop-color="#0b1824"/></linearGradient>
+  <pattern id="grid" width="55" height="55" patternUnits="userSpaceOnUse"><path d="M55 0H0V55" fill="none" stroke="#254055" stroke-opacity=".18"/></pattern>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1984" height="793" rx="28" fill="url(#bg)"/>
+<rect width="1984" height="793" rx="28" fill="url(#grid)"/>
+<rect x="45" y="58" width="1894" height="9" rx="5" fill="url(#accent)"/>
+<g font-family="Inter,Segoe UI,Arial,sans-serif">
+  <text x="118" y="221" fill="#88a2b9" font-size="31" font-weight="700" letter-spacing="7">PYTHON JOB AUTOMATION</text>
+  <text x="118" y="328" fill="#f7fafc" font-size="60" font-weight="800">Job Scraper with Email Alerts</text>
+  <text x="118" y="411" fill="#91aac0" font-size="32">Track Python jobs and email only new matches.</text>
+
+  <g transform="translate(118 468)">
+    <rect width="238" height="74" rx="37" fill="#101e2b" stroke="#2a4051" stroke-width="2"/>
+    <text x="119" y="47" text-anchor="middle" fill="#dce8f2" font-size="26" font-weight="700">Requests</text>
+    <rect x="264" width="286" height="74" rx="37" fill="#101e2b" stroke="#2a4051" stroke-width="2"/>
+    <text x="407" y="47" text-anchor="middle" fill="#dce8f2" font-size="26" font-weight="700">Beautiful Soup</text>
+    <rect x="576" width="198" height="74" rx="37" fill="#101e2b" stroke="#2a4051" stroke-width="2"/>
+    <text x="675" y="47" text-anchor="middle" fill="#dce8f2" font-size="26" font-weight="700">pytest</text>
+  </g>
+
+  <g transform="translate(1137 156)" filter="url(#shadow)">
+    <rect width="756" height="444" rx="32" fill="url(#panel)" stroke="#2b3c4a" stroke-width="2"/>
+    <g transform="translate(52 51)">
+      <rect width="170" height="122" rx="22" fill="#102234" stroke="#2f9df4" stroke-width="2"/>
+      <text x="85" y="49" text-anchor="middle" fill="#4daeff" font-size="27" font-weight="800">FETCH</text>
+      <text x="85" y="91" text-anchor="middle" fill="#d7e4ee" font-size="23">Python.org</text>
+      <text x="183" y="75" fill="#7d91a2" font-size="54">→</text>
+      <rect x="241" width="170" height="122" rx="22" fill="#0b291d" stroke="#27b957" stroke-width="2"/>
+      <text x="326" y="49" text-anchor="middle" fill="#39cd6c" font-size="27" font-weight="800">FILTER</text>
+      <text x="326" y="91" text-anchor="middle" fill="#d7e4ee" font-size="23">keywords</text>
+      <text x="424" y="75" fill="#7d91a2" font-size="54">→</text>
+      <rect x="482" width="170" height="122" rx="22" fill="#2a2012" stroke="#d98225" stroke-width="2"/>
+      <text x="567" y="49" text-anchor="middle" fill="#f0a13c" font-size="27" font-weight="800">ALERT</text>
+      <text x="567" y="91" text-anchor="middle" fill="#d7e4ee" font-size="23">email</text>
+    </g>
+    <g transform="translate(52 226)">
+      <rect width="652" height="165" rx="24" fill="#070d18" stroke="#304252" stroke-width="2"/>
+      <circle cx="38" cy="54" r="10" fill="#35c960"/>
+      <text x="69" y="64" fill="#bccbda" font-size="25">output formats</text>
+      <text x="610" y="64" text-anchor="end" fill="#f7fafc" font-size="28" font-weight="800">2</text>
+      <circle cx="38" cy="116" r="10" fill="#399ff0"/>
+      <text x="69" y="126" fill="#bccbda" font-size="25">tests passed</text>
+      <text x="610" y="126" text-anchor="end" fill="#f7fafc" font-size="28" font-weight="800">9</text>
+    </g>
+  </g>
+</g>
+</svg>
