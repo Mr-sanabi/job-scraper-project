@@ -14,7 +14,7 @@
 <g font-family="Inter,Segoe UI,Arial,sans-serif">
   <text x="118" y="221" fill="#88a2b9" font-size="31" font-weight="700" letter-spacing="7">PYTHON JOB AUTOMATION</text>
   <text x="118" y="328" fill="#f7fafc" font-size="60" font-weight="800">Job Scraper with Email Alerts</text>
-  <text x="118" y="411" fill="#91aac0" font-size="32">Track relevant Python jobs and email only new matches.</text>
+  <text x="118" y="411" fill="#91aac0" font-size="32">Track Python jobs and email only new matches.</text>
 
   <g transform="translate(118 468)">
     <rect width="238" height="74" rx="37" fill="#101e2b" stroke="#2a4051" stroke-width="2"/>
