@@ -39,7 +39,7 @@ def main() -> None:
         return
     
     EMAIL_LIMIT = config["email"]["limit"]
-    html = fetch_page(URL, config)
+    html = fetch_page(URL)
     
     if html is None:
         logging.error("No HTML received. Program stopped")
